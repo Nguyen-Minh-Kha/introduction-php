@@ -225,11 +225,4 @@ $recettes = [
     return ob_get_clean();
 }
 
-
-
-foreach ($recettes as $index => $recette){
-    echo PrettyRecipe($recette);
-    echo "</br>";
-}
-
 ?>

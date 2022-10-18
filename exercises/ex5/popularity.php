@@ -12,21 +12,28 @@
         integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
         crossorigin="anonymous" />
     <link rel="stylesheet" href="./includes/css/footer.css" />
-    <title>Page acceuil</title>
+    <title>Les plus populaire</title>
 </head>
 
 <body>
 
     <? include('./includes/navbar.php') ?>
     </br>
-
     <? include('./includes/content.php') ?>
 
     <?php 
+        $popularity = array();
+
+        foreach ($recettes as $key => $value){
+            $popularity[$key] = $value['likes']; 
+        }
+
+        array_multisort($popularity, SORT_DESC , $recettes);
+
         foreach ($recettes as $index => $recette){
             echo PrettyRecipe($recette);
             echo "</br>";
-        }
+    }
     ?>
     </br>
     <? include('./includes/footer.php') ?>
