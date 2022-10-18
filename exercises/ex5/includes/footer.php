@@ -4,7 +4,7 @@
             <li><a href="acceuil.php">Accueil</a></li>
             <li><a href="popularity.php">Les Plus Populaire</a></li>
             <li><a href="contact.php">Contact</a></li>
-            <li><a href="#">Nouvelle Recette</a></li>
+            <li><a href="nouvelleRecette.php">Nouvelle Recette</a></li>
         </ul>
     </div>
 </footer>
