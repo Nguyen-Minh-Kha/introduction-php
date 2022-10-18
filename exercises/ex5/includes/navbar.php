@@ -28,7 +28,7 @@
                     </ul>
                 </li> -->
                 <li class="nav-item">
-                    <a class="nav-link" href="#" style="color:white">Contact</a>
+                    <a class="nav-link" href="contact.php" style="color:white">Contact</a>
                 </li>
 
                 <li class="nav-item">
