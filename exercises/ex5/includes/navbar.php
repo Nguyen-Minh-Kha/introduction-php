@@ -34,9 +34,9 @@
                     <a class="nav-link" href="nouvelleRecette.php" style="color:white">Nouvelle Recette</a>
                 </li>
 
-                <!-- <li class="nav-item">
-                    <a class="nav-link disabled" style="color:white">Disabled</a>
-                </li> -->
+                <li class="nav-item">
+                    <a class="nav-link" href="connexion.php" style="color:white">Connexion</a>
+                </li>
             </ul>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
