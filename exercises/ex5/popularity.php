@@ -10,18 +10,18 @@
     </br>
     <? include('./includes/content.php') ?>
 
-    <?php 
-        $popularity = array();
+    <?php
+    $popularity = array();
 
-        foreach ($recettes as $key => $value){
-            $popularity[$key] = $value['likes']; 
-        }
+    foreach ($recettes as $key => $value) {
+        $popularity[$key] = $value['likes'];
+    }
 
-        array_multisort($popularity, SORT_DESC , $recettes);
+    array_multisort($popularity, SORT_DESC, $recettes);
 
-        foreach ($recettes as $index => $recette){
-            echo PrettyRecipe($recette);
-            echo "</br>";
+    foreach ($recettes as $index => $recette) {
+        echo PrettyRecipe($recette);
+        echo "</br>";
     }
     ?>
     </br>

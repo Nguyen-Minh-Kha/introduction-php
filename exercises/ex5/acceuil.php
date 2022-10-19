@@ -12,11 +12,11 @@
 
     <? include('./includes/content.php') ?>
 
-    <?php 
-        foreach ($recettes as $index => $recette){
-            echo PrettyRecipe($recette);
-            echo "</br>";
-        }
+    <?php
+    foreach ($recettes as $index => $recette) {
+        echo PrettyRecipe($recette);
+        echo "</br>";
+    }
     ?>
     </br>
     <? include('./includes/footer.php') ?>

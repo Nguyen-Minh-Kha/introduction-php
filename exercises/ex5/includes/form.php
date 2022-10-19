@@ -22,8 +22,7 @@
             <div class="fcf-form-group">
                 <label for="Message" class="fcf-label">Your message</label>
                 <div class="fcf-input-group">
-                    <textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000"
-                        required></textarea>
+                    <textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" required></textarea>
                 </div>
             </div>
 
@@ -33,8 +32,7 @@
             </div>
 
             <div class="fcf-credit" id="fcf-credit">
-                Simple HTML email form provided by <a href="https://www.majesticform.com"
-                    target="_blank">MajesticForm</a>
+                Simple HTML email form provided by <a href="https://www.majesticform.com" target="_blank">MajesticForm</a>
             </div>
 
         </form>
