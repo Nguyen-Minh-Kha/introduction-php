@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 include('./includes/users.php');
 
 if (isset($_POST['email']) && isset($_POST['password'])) {
@@ -20,11 +22,15 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             <h1> User not found </h1>
         <?php
         } else {
+            $_SESSION['nom'] = $user['nom'];
+            $_SESSION['prenom'] = $user['prenom'];
+            $_SESSION['email'] = $user['email'];
         ?>
             <h1> Bienvenue <? echo $user['nom'] ?>
                 <? echo $user['prenom'] ?></h1>
 
 <?php
+            header('Refresh: 2; URL=acceuil.php');
         }
     } else {
         echo '<h1> false email </h1>';

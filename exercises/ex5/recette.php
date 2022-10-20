@@ -7,7 +7,7 @@ ATTENTION ! Vous devez impérativement tester et
 valider l'identifiant passé en Query string
 */
 ?>
-
+<? session_start(); ?>
 <?php
 
 if (isset($_GET['id'])) {

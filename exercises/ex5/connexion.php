@@ -1,3 +1,4 @@
+<? session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <?php $TITLE = "Page connexion"; ?>

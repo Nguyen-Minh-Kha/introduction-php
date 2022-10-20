@@ -34,9 +34,36 @@
                     <a class="nav-link" href="nouvelleRecette.php" style="color:white">Nouvelle Recette</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="connexion.php" style="color:white">Connexion</a>
-                </li>
+                <!-- 
+                    check if session is set or not
+                    if set -> show user
+                    if not -> show connexion
+                -->
+                <?php
+                if (
+                    array_key_exists('nom', $_SESSION) && !empty($_SESSION['nom'])
+                    && array_key_exists('prenom', $_SESSION) && !empty($_SESSION['prenom'])
+                    && array_key_exists('email', $_SESSION) && !empty($_SESSION['email'])
+                ) {
+                ?>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" style="color:white"><?php echo ($_SESSION['nom'] . " " . $_SESSION['prenom']); ?></a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="deconnexion.php" style="color:white">Deconnexion</a>
+                    </li>
+
+                <?php
+                } else {
+                ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="connexion.php" style="color:white">Connexion</a>
+                    </li>
+                <?php
+                }
+                ?>
+
             </ul>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
