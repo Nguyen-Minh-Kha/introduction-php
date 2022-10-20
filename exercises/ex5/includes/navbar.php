@@ -41,13 +41,14 @@
                 -->
                 <?php
                 if (
-                    array_key_exists('nom', $_SESSION) && !empty($_SESSION['nom'])
-                    && array_key_exists('prenom', $_SESSION) && !empty($_SESSION['prenom'])
-                    && array_key_exists('email', $_SESSION) && !empty($_SESSION['email'])
+                    array_key_exists('userNom', $_COOKIE) && !empty($_COOKIE['userNom'])
+                    && array_key_exists('userPrenom', $_COOKIE) && !empty($_COOKIE['userPrenom'])
+                    && array_key_exists('userEmail', $_COOKIE) && !empty($_COOKIE['userEmail'])
                 ) {
+
                 ?>
                     <li class="nav-item">
-                        <a class="nav-link disabled" style="color:white"><?php echo ($_SESSION['nom'] . " " . $_SESSION['prenom']); ?></a>
+                        <a class="nav-link disabled" style="color:white"><?php echo ($_COOKIE['userNom'] . " " . $_COOKIE['userPrenom']); ?></a>
                     </li>
 
                     <li class="nav-item">

@@ -1,6 +1,24 @@
 <?php
+// setcookie('userEmail', "", [
+//     'httpOnly' => true,
+//     'secure' => true,
+//     'expires' => time() + 90 * 24 * 3600
+// ]);
 
-session_start();
+// setcookie('userPrenom', "", [
+//     'httpOnly' => true,
+//     'secure' => true,
+//     'expires' => time() + 90 * 24 * 3600
+// ]);
+
+// setcookie('userNom', "", [
+//     'httpOnly' => true,
+//     'secure' => true,
+//     'expires' => time() + 90 * 24 * 3600
+// ]);
+?>
+
+<?php
 
 include('./includes/users.php');
 
@@ -22,9 +40,25 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             <h1> User not found </h1>
         <?php
         } else {
-            $_SESSION['nom'] = $user['nom'];
-            $_SESSION['prenom'] = $user['prenom'];
-            $_SESSION['email'] = $user['email'];
+
+            setcookie('userEmail', $user['email'], [
+                'httpOnly' => true,
+                'secure' => true,
+                'expires' => time() + 24 * 3600
+            ]);
+
+            setcookie('userPrenom', $user['prenom'], [
+                'httpOnly' => true,
+                'secure' => true,
+                'expires' => time() + 24 * 3600
+            ]);
+
+            setcookie('userNom', $user['nom'], [
+                'httpOnly' => true,
+                'secure' => true,
+                'expires' => time() + 24 * 3600
+            ]);
+
         ?>
             <h1> Bienvenue <? echo $user['nom'] ?>
                 <? echo $user['prenom'] ?></h1>
