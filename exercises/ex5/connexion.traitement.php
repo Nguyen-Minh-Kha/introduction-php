@@ -30,7 +30,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 <? echo $user['prenom'] ?></h1>
 
 <?php
-            header('Refresh: 2; URL=acceuil.php');
+            header('Refresh: 1; URL=acceuil.php');
         }
     } else {
         echo '<h1> false email </h1>';
