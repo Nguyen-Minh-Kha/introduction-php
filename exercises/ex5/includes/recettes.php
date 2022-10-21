@@ -185,9 +185,9 @@ function fetchRecetteById(int $id)
 
     $requete->execute();
 
-    $recettes = $requete->fetch();
+    $recette = $requete->fetch();
 
-    return $recettes;
+    return $recette;
 }
 
 

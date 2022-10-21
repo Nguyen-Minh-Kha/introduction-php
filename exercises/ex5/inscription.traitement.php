@@ -108,28 +108,17 @@ if (
 
     if ($email && $lastname && $firstname && $password && $sexe && $birthdate) {
 
-        $connection = new PDO(
-            'mysql:host=localhost;dbname=cookme;charset=utf8',
-            'root',
-            'root',
-        );
+        include('./includes/users.php');
 
-        $request = $connection->prepare(<<<SQL
-        INSERT INTO users (firstname, lastname, email, imageUrl, password, sexe, birthdate)
-        VALUES (:firstname, :lastname, :email, :imageUrl, :password, :sexe, :birthdate)
-    SQL);
+        $user = addNewUser($firstname, $lastname, $email, $imageUrl, $password, $sexe, $birthdate);
+?>
 
-        $request->execute([
-            'firstname' => $firstname,
-            'lastname' => $lastname,
-            'email' => $email,
-            'imageUrl' => $imageUrl,
-            'password' => $password,
-            'sexe' => $sexe,
-            'birthdate' => $birthdate,
-        ]);
+        <h1> Bienvenue <? echo $user['lastname'] ?>
+            <? echo $user['firstname'] ?></h1>
 
-        header('Refresh: 1; URL=acceuil.php');
+<?
+
+        header('Refresh: 1; URL=connexion.php');
     } else {
         echo '<h1> Some information entered is false</h1>';
     }

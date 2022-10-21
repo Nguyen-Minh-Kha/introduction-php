@@ -9,9 +9,6 @@
     <? include('./includes/navbar.php') ?>
     </br>
 
-    <?php
-    ?>
-
     <? include('./includes/loginForm.php') ?>
 
     </br>

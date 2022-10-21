@@ -55,6 +55,10 @@
             </div>
 
             <div class="fcf-form-group">
+                <label for="Signin" class="fcf-label"> <a href="connexion.php" target="_blank">Log in ?</a></label>
+            </div>
+
+            <div class="fcf-form-group">
                 <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">
                     S'inscrire</button>
             </div>

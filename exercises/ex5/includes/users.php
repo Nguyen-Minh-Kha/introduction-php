@@ -23,17 +23,76 @@
 //     ],
 // ];
 
-$connection = new PDO(
-    'mysql:host=localhost;dbname=cookme;charset=utf8',
-    'root',
-    'root',
-);
 
-$requete = $connection->prepare('SELECT * FROM users');
+// fetchAllUsers 
 
-$requete->execute();
+function fetchAllUsers()
+{
+    $connection = new PDO(
+        'mysql:host=localhost;dbname=cookme;charset=utf8',
+        'root',
+        'root',
+    );
 
-$users = $requete->fetchAll();
+    $requete = $connection->prepare('SELECT * FROM users');
+
+    $requete->execute();
+
+    $users = $requete->fetchAll();
+
+    return $users;
+}
+
+//function fetchUserById
+
+function fetchUserById($id)
+{
+    $connection = new PDO(
+        'mysql:host=localhost;dbname=cookme;charset=utf8',
+        'root',
+        'root',
+    );
+
+    $requete = $connection->prepare('SELECT * FROM users WHERE id=' . $id);
+
+    $requete->execute();
+
+    $user = $requete->fetch();
+
+    return $user;
+}
+
+// addNewUser(firstname, lastname, email, imageUrl, password, sexe, birthdate) -> add new user into DB and return this user
+
+function addNewUser($firstname, $lastname, $email, $imageUrl, $password, $sexe, $birthdate)
+{
+    $connection = new PDO(
+        'mysql:host=localhost;dbname=cookme;charset=utf8',
+        'root',
+        'root',
+    );
+
+    $request = $connection->prepare(<<<SQL
+        INSERT INTO users (firstname, lastname, email, imageUrl, password, sexe, birthdate)
+        VALUES (:firstname, :lastname, :email, :imageUrl, :password, :sexe, :birthdate)
+    SQL);
+
+    $request->execute([
+        'firstname' => $firstname,
+        'lastname' => $lastname,
+        'email' => $email,
+        'imageUrl' => $imageUrl,
+        'password' => $password,
+        'sexe' => $sexe,
+        'birthdate' => $birthdate,
+    ]);
+
+    $id = $connection->lastInsertID();
+
+    $user = fetchUserById($id);
+
+    return $user;
+}
 
 // foreach ($users as $user) {
 //     echo '<h3>' . $user['email'] . '</h3>';

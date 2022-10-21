@@ -27,6 +27,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
     if ($email) {
         include('./includes/users.php');
+        $users = fetchAllUsers();
         foreach ($users as $key => $value) {
             if ($email === $value['email'] && $password === $value['password']) {
                 $user = $value;
