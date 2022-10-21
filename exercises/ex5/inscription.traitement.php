@@ -9,7 +9,7 @@
 // echo $_POST['date'];
 
 $namefields = '/[a-zA-Z\s]+/'; // alpha or spaces, at least 1 char
-$passwordfield = "^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"; // check password 
+$passwordfield = "/.*[A-Za-z\d][^A-Za-z\d]*$/"; // check password 
 
 //check date
 function validateDate($date)
@@ -59,7 +59,7 @@ if (
             filter_var(
                 $_POST['password'],
                 FILTER_VALIDATE_REGEXP,
-                ["options" => ["regexp" => $namefields]]
+                ["options" => ["regexp" => $passwordfield]]
             );
     } else {
         $password = null;
@@ -117,10 +117,11 @@ if (
             <? echo $user['firstname'] ?></h1>
 
 <?
-
+        // echo $password;
         header('Refresh: 1; URL=connexion.php');
     } else {
         echo '<h1> Some information entered is false</h1>';
+        // echo $password;
     }
 } else {
     echo '<h1> Some information is missing</h1>';

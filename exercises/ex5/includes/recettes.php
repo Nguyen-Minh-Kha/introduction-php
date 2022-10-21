@@ -4,7 +4,7 @@
 //         'id' => 1,
 //         'intitulé' => 'Poulet Basquaise',
 //         'description' => 'Une délicieuse recette de poulet au poivrons :)',
-//         'image' => 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fauvraidelice.fr%2Fwp-content%2Fuploads%2F2020%2F06%2FIMG-AuVraiDelice-6.jpg&f=1&nofb=1&ipt=5192941f5ed4215a84f1436d1c078cb15fe138fbd50d865f5681fdd851283f76&ipo=images',
+//         'image' => 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fauvraidelice.fr%2Fwp-content%2Fuploads%2F2020%2F06%2FIMG-AuVraiDelice-6.jpg',
 //         'likes' => 8,
 //         'difficulte' => 4,
 //         'prix' => '€',
@@ -188,6 +188,37 @@ function fetchRecetteById(int $id)
     $recette = $requete->fetch();
 
     return $recette;
+}
+
+// function addNewRecette($title,$description,$image,$difficulty,$price,$author,$likes,$active) -> return id of last entered
+
+function addNewRecette($title, $description, $image, $difficulty, $price, $author, $likes, $active)
+{
+    $connection = new PDO(
+        'mysql:host=localhost;dbname=cookme;charset=utf8',
+        'root',
+        'root',
+    );
+
+    $request = $connection->prepare(<<<SQL
+        INSERT INTO recettes (title, description, image, difficulty, price, active, author, likes)
+        VALUES (:title, :description, :image, :difficulty, :price, :active, :author, :likes)
+    SQL);
+
+    $request->execute([
+        'title' => $title,
+        'description' => $description,
+        'image' => $image,
+        'difficulty' => $difficulty,
+        'price' => $price,
+        'active' => $active,
+        'author' => $author,
+        'likes' => $likes,
+    ]);
+
+    $id = $connection->lastInsertID();
+
+    return $id;
 }
 
 

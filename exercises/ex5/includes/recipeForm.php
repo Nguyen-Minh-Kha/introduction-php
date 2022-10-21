@@ -29,7 +29,7 @@
             <div class="fcf-form-group">
                 <label for="Difficulty" class="fcf-label">difficulté</label>
                 <div class="fcf-input-group">
-                    <input type="text" id="Difficulty" name="difficulty" class="fcf-form-control" required>
+                    <input type="number" id="Difficulty" name="difficulty" class="fcf-form-control" required>
                 </div>
             </div>
 
@@ -41,7 +41,22 @@
             </div>
 
             <div class="fcf-form-group">
-                <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send
+                <label for="Author" class="fcf-label">Auteur</label>
+                <div class="fcf-input-group">
+                    <input type="text" id="Author" name="author" class="fcf-form-control" required>
+                </div>
+            </div>
+
+            <div class="fcf-form-group">
+                <label for="Likes" class="fcf-label">Likes</label>
+                <div class="fcf-input-group">
+                    <input type="text" id="Likes" name="likes" class="fcf-form-control" required>
+                </div>
+            </div>
+
+
+            <div class="fcf-form-group">
+                <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">
                     Créer une nouvelle recette</button>
             </div>
 
