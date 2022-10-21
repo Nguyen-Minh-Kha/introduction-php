@@ -1,6 +1,17 @@
 <? include('recettes.php') ?>
 
 <?php
+
+//data structure 
+// id
+// title
+// description
+// image
+// difficulty
+// price
+// active
+// author
+
 function PrettyRecipe($tab)
 {
     $image = $tab['image'];
@@ -9,11 +20,11 @@ function PrettyRecipe($tab)
     <div class="container">
         <img src="<?php echo $image ?>" />
         <div class="container__text">
-            <h1><?php echo ("Recette n° " . $tab['id'] . " " . $tab['intitulé']) ?></h1>
+            <h1><?php echo ("Recette n° " . $tab['id'] . " " . $tab['title']) ?></h1>
             <div class="container__text__star">
                 <span> Difficulté </span>
                 <?php
-                for ($i = 0; $i < $tab['difficulte']; $i++) {
+                for ($i = 0; $i < $tab['difficulty']; $i++) {
                     echo '<span class="fa fa-star checked"></span>';
                 }
                 ?>
@@ -22,12 +33,19 @@ function PrettyRecipe($tab)
             <div class="container__text__timing">
                 <div class="container__text__timing_time">
                     <h2>Prix</h2>
-                    <p><?php echo ($tab['prix']) ?></p>
+                    <p><?php echo ($tab['price']) ?></p>
                 </div>
-                <div class="container__text__timing_time">
+
+                <!-- <div class="container__text__timing_time">
                     <h2>Likes</h2>
                     <p><?php echo ($tab['likes']) ?></p>
+                </div> -->
+
+                <div class="container__text__timing_time">
+                    <h2>Auteur</h2>
+                    <p><?php echo ($tab['author']) ?></p>
                 </div>
+
                 <div class="container__text__timing_time">
                     <h2>Active</h2>
                     <p> <?php
