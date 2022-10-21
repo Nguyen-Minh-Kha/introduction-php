@@ -20,8 +20,6 @@
 
 <?php
 
-include('./includes/users.php');
-
 if (isset($_POST['email']) && isset($_POST['password'])) {
     $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
     $password = $_POST['password'];
@@ -29,7 +27,7 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
 
     if ($email) {
         include('./includes/users.php');
-        foreach ($utilisateurs as $key => $value) {
+        foreach ($users as $key => $value) {
             if ($email === $value['email'] && $password === $value['password']) {
                 $user = $value;
             }
@@ -47,21 +45,21 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
                 'expires' => time() + 24 * 3600
             ]);
 
-            setcookie('userPrenom', $user['prenom'], [
+            setcookie('userPrenom', $user['firstname'], [
                 'httpOnly' => true,
                 'secure' => true,
                 'expires' => time() + 24 * 3600
             ]);
 
-            setcookie('userNom', $user['nom'], [
+            setcookie('userNom', $user['lastname'], [
                 'httpOnly' => true,
                 'secure' => true,
                 'expires' => time() + 24 * 3600
             ]);
 
         ?>
-            <h1> Bienvenue <? echo $user['nom'] ?>
-                <? echo $user['prenom'] ?></h1>
+            <h1> Bienvenue <? echo $user['firstname'] ?>
+                <? echo $user['lastname'] ?></h1>
 
 <?php
             header('Refresh: 1; URL=acceuil.php');

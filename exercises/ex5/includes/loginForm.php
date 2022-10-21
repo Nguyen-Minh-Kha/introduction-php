@@ -13,7 +13,7 @@
             </div>
 
             <div class="fcf-form-group">
-                <label for="Email" class="fcf-label">Your password</label>
+                <label for="Password" class="fcf-label">Your password</label>
                 <div class="fcf-input-group">
                     <input type="password" id="Password" name="password" class="fcf-form-control" value="" required>
                 </div>
