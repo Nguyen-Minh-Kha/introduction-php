@@ -152,18 +152,56 @@
 //     ],
 // ];
 
-$connection = new PDO(
-    'mysql:host=localhost;dbname=cookme;charset=utf8',
-    'root',
-    'root',
-);
+// function fetchallrecettes
 
-$requete = $connection->prepare('SELECT * FROM recettes');
+function fetchallrecettes()
+{
+    $connection = new PDO(
+        'mysql:host=localhost;dbname=cookme;charset=utf8',
+        'root',
+        'root',
+    );
 
-$requete->execute();
+    $requete = $connection->prepare('SELECT * FROM recettes');
 
-$recettes = $requete->fetchAll();
+    $requete->execute();
+
+    $recettes = $requete->fetchAll();
+
+    return $recettes;
+}
+
+// function fetchrecettebyid(id)
+
+function fetchRecetteById(int $id)
+{
+    $connection = new PDO(
+        'mysql:host=localhost;dbname=cookme;charset=utf8',
+        'root',
+        'root',
+    );
+
+    $requete = $connection->prepare('SELECT * FROM recettes WHERE id=' . $id);
+
+    $requete->execute();
+
+    $recettes = $requete->fetch();
+
+    return $recettes;
+}
+
 
 // foreach ($recettes as $recette) {
 //     echo '<h3>' . $recette['title'] . '</h3>';
 // }
+
+//data structure 
+// id 
+// title(text)
+// description(text)
+// image(varchar(255))
+// difficulty(varchar(255))
+// price(varchar(255))
+// active(bool)
+// author(varchar(255))
+// likes (int(11))

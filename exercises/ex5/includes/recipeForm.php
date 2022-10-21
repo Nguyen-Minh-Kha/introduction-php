@@ -3,46 +3,46 @@
     <div id="fcf-form">
         <h3 class="fcf-h3">Ajoutez une nouvelle recette</h3>
 
-        <form id="fcf-form-id" class="fcf-form-class" method="post" action="contact-form-process.php">
+        <form id="fcf-form-id" class="fcf-form-class" method="post" action="nouvelleRecette.traitement.php">
 
             <div class="fcf-form-group">
-                <label for="Name" class="fcf-label">intitulé</label>
+                <label for="Title" class="fcf-label">title</label>
                 <div class="fcf-input-group">
-                    <input type="text" id="Name" name="Name" class="fcf-form-control" required>
+                    <input type="text" id="title" name="title" class="fcf-form-control" required>
                 </div>
             </div>
 
             <div class="fcf-form-group">
-                <label for="Message" class="fcf-label">description</label>
+                <label for="Description" class="fcf-label">description</label>
                 <div class="fcf-input-group">
-                    <textarea id="Message" name="Message" class="fcf-form-control" rows="6" maxlength="3000" required></textarea>
+                    <textarea id="Description" name="description" class="fcf-form-control" rows="6" maxlength="3000" required></textarea>
                 </div>
             </div>
 
             <div class="fcf-form-group">
-                <label for="Email" class="fcf-label">image url</label>
+                <label for="Image" class="fcf-label">image url</label>
                 <div class="fcf-input-group">
-                    <input type="email" id="Email" name="Email" class="fcf-form-control" required>
+                    <input type="url" id="Image" name="image" class="fcf-form-control" required>
                 </div>
             </div>
 
             <div class="fcf-form-group">
-                <label for="Email" class="fcf-label">difficulté</label>
+                <label for="Difficulty" class="fcf-label">difficulté</label>
                 <div class="fcf-input-group">
-                    <input type="email" id="Email" name="Email" class="fcf-form-control" required>
+                    <input type="text" id="Difficulty" name="difficulty" class="fcf-form-control" required>
                 </div>
             </div>
 
             <div class="fcf-form-group">
-                <label for="Email" class="fcf-label">prix</label>
+                <label for="Price" class="fcf-label">prix</label>
                 <div class="fcf-input-group">
-                    <input type="email" id="Email" name="Email" class="fcf-form-control" required>
+                    <input type="text" id="Price" name="price" class="fcf-form-control" required>
                 </div>
             </div>
 
             <div class="fcf-form-group">
                 <button type="submit" id="fcf-button" class="fcf-btn fcf-btn-primary fcf-btn-lg fcf-btn-block">Send
-                    Message</button>
+                    Créer une nouvelle recette</button>
             </div>
 
             <div class="fcf-credit" id="fcf-credit">

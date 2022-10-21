@@ -8,9 +8,11 @@
 
     <? include('./includes/navbar.php') ?>
     </br>
+    <? include('./includes/recettes.php') ?>
     <? include('./includes/content.php') ?>
 
     <?php
+    $recettes = fetchallrecettes();
     $popularity = array();
 
     foreach ($recettes as $key => $value) {

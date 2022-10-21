@@ -106,10 +106,6 @@ if (
     // echo "</br>";
     // echo $birthdate;
 
-
-
-
-
     if ($email && $lastname && $firstname && $password && $sexe && $birthdate) {
 
         $connection = new PDO(

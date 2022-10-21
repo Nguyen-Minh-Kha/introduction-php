@@ -30,10 +30,6 @@
                     <a class="nav-link" href="contact.php" style="color:white">Contact</a>
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="nouvelleRecette.php" style="color:white">Nouvelle Recette</a>
-                </li>
-
                 <!-- 
                     check if session is set or not
                     if set -> show user
@@ -47,6 +43,11 @@
                 ) {
 
                 ?>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="nouvelleRecette.php" style="color:white">Nouvelle Recette</a>
+                    </li>
+
                     <li class="nav-item">
                         <a class="nav-link disabled" style="color:white"><?php echo ($_COOKIE['userNom'] . " " . $_COOKIE['userPrenom']); ?></a>
                     </li>

@@ -13,20 +13,28 @@ valider l'identifiant passé en Query string
 if (isset($_GET['id'])) {
     $id = filter_var($_GET['id'], FILTER_VALIDATE_INT);
     if ($id) {
+        include('./includes/recettes.php');
 
         include('./includes/content.php');
+
+        $recette = fetchRecetteById($id);
+
+        // foreach ($recette as $index => $value) {
+        //     echo ($index . " " . $value);
+        // }
 
 ?>
 
         <!DOCTYPE html>
         <html lang="en">
-        <?php $TITLE = "Page de la recette n° " . $id - 1; ?>
+        <?php $TITLE = "Page de la recette n° " . $id; ?>
         <? include('./includes/head.php') ?>
 
         <body>
             <? include('./includes/navbar.php') ?>
             </br>
-            <? echo PrettyRecipe($recettes[$id - 1]) ?>
+            <? echo PrettyRecipe($recette)
+            ?>
             </br>
             <? include('./includes/footer.php') ?>
 

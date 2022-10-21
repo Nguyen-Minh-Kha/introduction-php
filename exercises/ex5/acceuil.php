@@ -10,9 +10,12 @@
     <? include('./includes/navbar.php') ?>
     </br>
 
+    <? include('./includes/recettes.php') ?>
+
     <? include('./includes/content.php') ?>
 
     <?php
+    $recettes = fetchallrecettes();
     foreach ($recettes as $index => $recette) {
         echo PrettyRecipe($recette);
         echo "</br>";

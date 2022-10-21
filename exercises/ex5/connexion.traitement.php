@@ -58,8 +58,8 @@ if (isset($_POST['email']) && isset($_POST['password'])) {
             ]);
 
         ?>
-            <h1> Bienvenue <? echo $user['firstname'] ?>
-                <? echo $user['lastname'] ?></h1>
+            <h1> Bienvenue <? echo $user['lastname'] ?>
+                <? echo $user['firstname'] ?></h1>
 
 <?php
             header('Refresh: 1; URL=acceuil.php');

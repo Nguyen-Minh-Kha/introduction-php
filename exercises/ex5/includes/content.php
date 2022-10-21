@@ -1,5 +1,3 @@
-<? include('recettes.php') ?>
-
 <?php
 
 //data structure 
@@ -36,10 +34,10 @@ function PrettyRecipe($tab)
                     <p><?php echo ($tab['price']) ?></p>
                 </div>
 
-                <!-- <div class="container__text__timing_time">
+                <div class="container__text__timing_time">
                     <h2>Likes</h2>
                     <p><?php echo ($tab['likes']) ?></p>
-                </div> -->
+                </div>
 
                 <div class="container__text__timing_time">
                     <h2>Auteur</h2>
